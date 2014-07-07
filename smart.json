@@ -11,7 +11,6 @@
     "iron-router-progress": {},
     "jquery-hotkeys": {},
     "marked": {},
-    "bootstrap3-datepicker": {},
-    "spiderable": {}
+    "bootstrap3-datepicker": {}
   }
 }

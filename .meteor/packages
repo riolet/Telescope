@@ -8,7 +8,6 @@ accounts-base
 accounts-ui
 accounts-password
 accounts-twitter
-spiderable
 email
 crypto-md5
 momentjs
@@ -32,3 +31,4 @@ telescope-api
 jquery-hotkeys
 marked
 bootstrap3-datepicker
+spiderable
