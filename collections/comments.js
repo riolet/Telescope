@@ -80,9 +80,11 @@ Comments.allow({
 
 Meteor.methods({
   comment: function(postId, parentCommentId, text){
+
+
     var user = Meteor.user(),
-        post=Posts.findOne(postId),
-        postUser=Meteor.users.findOne(post.userId),
+        post=Posts.findOne(postId);
+        postUser=Meteor.users.findOne(post.userId);
         timeSinceLastComment=timeSinceLast(user, Comments),
         cleanText= cleanUp(text),
         commentInterval = Math.abs(parseInt(getSetting('commentInterval',15))),

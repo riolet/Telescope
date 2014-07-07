@@ -54,6 +54,9 @@
         </p>
       </div>
     </div>
+      {{#if isVideo}}
+      <div class="post-message markdown">{{{video}}}</div>
+      {{/if}}
     {{#if body}}
       <div class="post-message markdown">{{#markdown}}{{body}}{{/markdown}}</div>
     {{/if}}

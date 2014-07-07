@@ -6,6 +6,7 @@ Template.post_item.helpers({
   postLink: function(){
     return !!this.url ? getOutgoingUrl(this.url) : "/posts/"+this._id;
   },
+
   sourceLink: function(){
     return !!this.url ? this.url : "/posts/"+this._id;
   },
@@ -75,7 +76,37 @@ Template.post_item.helpers({
   },
   viaTwitter: function () {
     return !!getSetting('twitterAccount') ? 'via='+getSetting('twitterAccount') : '';
-  }
+  },
+  isVideo: function() {
+      if (this.url) {
+          var a = document.createElement('a');
+          a.href = this.url;
+          domain= a.hostname;
+          console.log(domain);
+          if (domain == 'www.youtube.com' || domain == 'youtube.com' || domain == 'youtu.be') {
+                  return true;
+          }
+      }
+      return false;
+  },
+    video:function(){
+        var a = document.createElement('a');
+        a.href = this.url;
+        domain= a.hostname;
+        console.log(domain);
+        if (domain == 'www.youtube.com' || domain == 'youtube.com') {
+            var video_id = this.url.split('v=')[1];
+            return '<div class="video-container">'
+                +'<iframe src="http://www.youtube.com/embed/'+video_id+'" frameborder="0" width="560" height="315"></iframe>'
+            +'</div>'
+        } else {
+            var video_id = this.url.split('.be/')[1];
+            return '<div class="video-container">'
+                +'<iframe src="http://www.youtube.com/embed/'+video_id+'" frameborder="0" width="560" height="315"></iframe>'
+                +'</div>'
+
+        }
+    }
 });
 
 Template.post_item.events({
