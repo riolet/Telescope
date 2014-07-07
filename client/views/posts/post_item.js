@@ -106,19 +106,6 @@ Template.post_item.helpers({
                 +'</div>'
 
         }
-    },
-    videoThumbnail:function(){
-        var a = document.createElement('a');
-        var video_id;
-        a.href = this.url;
-        var domain= a.hostname;
-        console.log(domain);
-        if (domain == 'www.youtube.com' || domain == 'youtube.com') {
-            video_id = this.url.split('v=')[1];
-        } else {
-            video_id = this.url.split('.be/')[1];
-        }
-        return 'http://img.youtube.com/vi/'+video_id+'/maxresdefault.jpg'
     }
 });
 
@@ -152,3 +139,29 @@ Template.post_item.events({
     e.preventDefault();
   }
 });
+
+Template.post_item.rendered=function() {
+    console.log(this.data);
+    if (this.data) {
+
+        var a = document.createElement('a');
+        var video_id;
+        var url = this.data.url;
+        a.href = url;
+        var domain= a.hostname;
+        console.log(domain);
+        if (domain == 'www.youtube.com' || domain == 'youtube.com') {
+            video_id = url.split('v=')[1];
+        } else {
+            video_id = url.split('.be/')[1];
+        }
+
+        var ogImg='http://img.youtube.com/vi/'+video_id+'/maxresdefault.jpg'
+
+        var ogMetaTag = document.createElement('meta');
+        ogMetaTag.setAttribute("property","og:image");
+        ogMetaTag.content = ogImg;
+        document.getElementsByTagName('head')[0].appendChild(ogMetaTag);
+
+    }
+}

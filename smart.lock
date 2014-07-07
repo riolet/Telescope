@@ -12,7 +12,8 @@
       "iron-router-progress": {},
       "jquery-hotkeys": {},
       "marked": {},
-      "bootstrap3-datepicker": {}
+      "bootstrap3-datepicker": {},
+      "headly": {}
     },
     "packages": {
       "momentjs": {
@@ -47,8 +48,8 @@
       },
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
-        "tag": "v0.13.5",
-        "commit": "27dd5b912eeba687b228a6a7c2c14eef63b12cca"
+        "tag": "v0.14.0",
+        "commit": "30de032833052ea61e9d37bca5523264309d4478"
       },
       "iron-router-progress": {
         "git": "https://github.com/Multiply/iron-router-progress.git",
@@ -69,6 +70,11 @@
         "git": "https://github.com/rajit/bootstrap3-datepicker.git",
         "tag": "v0.2.1",
         "commit": "442484eb1c8eb00c6b9e0e9c88accc934cf8f04a"
+      },
+      "headly": {
+        "git": "https://github.com/ayal/headly",
+        "tag": "v0.1.1",
+        "commit": "f14effc81eab10efb876664bc010a5341ac95358"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
