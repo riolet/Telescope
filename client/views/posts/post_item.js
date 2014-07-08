@@ -7,6 +7,10 @@ Template.post_item.helpers({
     return !!this.url ? getOutgoingUrl(this.url) : "/posts/"+this._id;
   },
 
+  myLink: function() {
+      return document.URL;
+  },
+
   sourceLink: function(){
     return !!this.url ? this.url : "/posts/"+this._id;
   },
